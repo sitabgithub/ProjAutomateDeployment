@@ -9,5 +9,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="demomuleautomationFlow" doc:id="5b410aa7-a03b-4e7d-a91a-f7b7802a2427" >
 		<http:listener doc:name="Listener" doc:id="c6fe62a2-0ffe-4c05-a023-ea3e718028f6" config-ref="HTTP_Listener_config" path="/api"/>
+		<logger level="INFO" doc:name="Logger" doc:id="a4c7ff85-07c1-4772-b4a1-a8e10d3b8a68" message="#[payload]"/>
 	</flow>
 </mule>
