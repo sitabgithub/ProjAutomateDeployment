@@ -36,7 +36,7 @@
 			      <workers>${workers}</workers>
 			      <workerType>${workerType}</workerType>
 			      <properties>
-			        <key>value</key>
+			        <key>valueKey</key>
 			      </properties>
 			    </cloudHubDeployment>
 				<sharedLibraries>
