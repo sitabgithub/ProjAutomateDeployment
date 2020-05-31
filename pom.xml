@@ -86,11 +86,10 @@
             <classifier>mule-plugin</classifier>
         </dependency>
     	<dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <version>7.2.1</version>
-            <classifier>jre11</classifier>
-        </dependency>
+		    <groupId>com.microsoft.sqlserver</groupId>
+		    <artifactId>mssql-jdbc</artifactId>
+		    <version>7.2.1.jre11</version>
+		</dependency>
     	<dependency>
             <groupId>com.mulesoft.connectors</groupId>
             <artifactId>mule-salesforce-connector</artifactId>
