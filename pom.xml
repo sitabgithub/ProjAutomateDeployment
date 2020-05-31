@@ -36,7 +36,7 @@
 			      <workers>${workers}</workers>
 			      <workerType>${workerType}</workerType>
 			      <properties>
-			        <key>valueKey</key>
+			        <key>value</key>
 			      </properties>
 			    </cloudHubDeployment>
 				<sharedLibraries>
@@ -96,7 +96,12 @@
             <version>9.4.0</version>
             <classifier>mule-plugin</classifier>
         </dependency>
-    	
+    	<dependency>
+		    <groupId>com.sun.xml.ws</groupId>
+		    <artifactId>jaxws-rt</artifactId>
+		    <version>2.2.10</version>
+		    <type>pom</type>
+		</dependency>
     </dependencies>
 
 	<repositories>
