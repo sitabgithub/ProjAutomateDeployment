@@ -97,12 +97,7 @@
             <version>9.4.0</version>
             <classifier>mule-plugin</classifier>
         </dependency>
-    	<dependency>
-            <groupId>com.mycompany</groupId>
-            <artifactId>demomuleautomation</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <classifier>jre11</classifier>
-        </dependency>
+    	
     </dependencies>
 
 	<repositories>
