@@ -40,15 +40,11 @@
 			      </properties>
 			    </cloudHubDeployment>
 				<sharedLibraries>
-                        <sharedLibrary>
-                            <groupId>com.microsoft.sqlserver</groupId>
-                            <artifactId>mssql-jdbc</artifactId>
-                        </sharedLibrary>
                     <sharedLibrary>
-                            <groupId>com.mycompany</groupId>
-                            <artifactId>demomuleautomation</artifactId>
-                        </sharedLibrary>
-                    </sharedLibraries>
+                        <groupId>com.microsoft.sqlserver</groupId>
+                        <artifactId>mssql-jdbc</artifactId>
+                    </sharedLibrary>
+                 </sharedLibraries>
                 </configuration>
 			</plugin>
 		</plugins>
@@ -96,12 +92,7 @@
             <version>9.4.0</version>
             <classifier>mule-plugin</classifier>
         </dependency>
-    	<dependency>
-		    <groupId>com.sun.xml.ws</groupId>
-		    <artifactId>jaxws-rt</artifactId>
-		    <version>2.2.10</version>
-		    <type>pom</type>
-		</dependency>
+    	
     </dependencies>
 
 	<repositories>
