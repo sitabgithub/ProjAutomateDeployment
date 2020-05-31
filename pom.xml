@@ -38,7 +38,7 @@
 			      <properties>
 			        <key>value</key>
 			      </properties>
-			    </cloudHubDeployment>
+			    </cloudHubDeployment> 
 				<sharedLibraries>
                     <sharedLibrary>
                         <groupId>com.microsoft.sqlserver</groupId>
