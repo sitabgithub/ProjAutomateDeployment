@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
-	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:netsuite="http://www.mulesoft.org/schema/mule/netsuite"
+	xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="1aa483fe-e713-47e9-9108-645cde352f67" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<flow name="demomuleautomationFlow" doc:id="5b410aa7-a03b-4e7d-a91a-f7b7802a2427" >
-		<http:listener doc:name="Listener" doc:id="c6fe62a2-0ffe-4c05-a023-ea3e718028f6" config-ref="HTTP_Listener_config" path="/api"/>
+		<http:listener doc:name="Listener" doc:id="c6fe62a2-0ffe-4c05-a023-ea3e718028f6" config-ref="HTTP_Listener_config" path="/api" responseStreamingMode="NEVER"/>
 		<logger level="INFO" doc:name="Logger" doc:id="a4c7ff85-07c1-4772-b4a1-a8e10d3b8a68" message="#[payload]"/>
+		<set-payload value="#['Welcome to Mulesoft deployment to cloudhub using Mule Maven Plugin']" doc:name="Set Payload" doc:id="ce524f3a-02d6-4df1-ba87-fd59deb2ee61" />
+		<error-handler >
+			<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="f925bb20-10f4-4cde-baf7-463d62dce127" />
+		</error-handler>
+	</flow>
+	<flow name="test">
+		<http:listener doc:name="Listener" doc:id="c5f31c4f-f0a8-45bb-b383-9c5fa6444f8c" config-ref="HTTP_Listener_config" path="/"/>
+		<file:read doc:name="Read" doc:id="2558dde8-3f47-4373-8e8e-9f7ba6a7731c" path="/">
+			<ee:repeatable-file-store-stream inMemorySize="512" />
+		</file:read>
 	</flow>
 </mule>
